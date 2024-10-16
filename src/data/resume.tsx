@@ -27,7 +27,7 @@ export const DATA = {
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
-    { href: "/project", icon: GalleryVerticalEndIcon, label: "Project" },
+    { href: "/#projects", icon: GalleryVerticalEndIcon, label: "Project" },
     { href: "/blog", icon: NotebookIcon, label: "Blog" },
   ],
   contact: {
