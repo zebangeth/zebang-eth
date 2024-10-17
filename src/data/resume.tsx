@@ -59,7 +59,7 @@ export const DATA = {
     {
       company: "Amazon",
       href: "https://aws.amazon.com",
-      badges: ["Java", "AWS", "NoSQL", "LLM", "IaaS"],
+      badges: [],
       location: "Santa Clara, CA",
       title: "Software Engineer",
       logoUrl: "/aws.png",
@@ -162,26 +162,26 @@ export const DATA = {
   projects: [
     {
       title: "White Bear Closet",
-      href: "https://chatcollect.com",
-      dates: "Jan 2024 - Feb 2024",
+      href: "",
+      dates: "Oct 2024 - Present",
       active: true,
       description:
-        "With the release of the [OpenAI GPT Store](https://openai.com/blog/introducing-the-gpt-store), I decided to build a SaaS which allows users to collect email addresses from their GPT users. This is a great way to build an audience and monetize your GPT API usage.",
+        "A mobile app that helps users organize their clothes, plan outfits, and virtually try on clothes of their own and from online stores.",
       technologies: [
-        "Next.js",
+        "React Native",
         "Typescript",
-        "PostgreSQL",
-        "Prisma",
+        "AWS S3",
+        "Comfy UI",
         "TailwindCSS",
-        "Stripe",
+        "Figma",
         "Shadcn UI",
         "Magic UI",
       ],
       links: [
         {
-          type: "Website",
-          href: "https://chatcollect.com",
-          icon: <Icons.globe className="size-3" />,
+          type: "Source",
+          href: "",
+          icon: <Icons.github className="size-3" />,
         },
       ],
       image: "",
