@@ -117,7 +117,7 @@ export const DATA = {
         "Monetization strategy and analytics: covered South Korea, Russia, and MENA markets; supported TikTok Live 0-1 launch in MENA",
     },
     {
-      company: "Uber China (Acquired by Didi)",
+      company: "Uber China (now DiDi)",
       href: "https://web.didiglobal.com/",
       badges: [],
       location: "Beijing, China",
