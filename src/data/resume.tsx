@@ -4,14 +4,14 @@ import { HomeIcon, GalleryVerticalEndIcon, NotebookIcon } from "lucide-react";
 export const DATA = {
   name: "zebang",
   initials: "z. l.",
-  url: "https://dillion.io",
+  url: "https://zebang.li",
   location: "Sunnyvale, CA",
   locationLink: "https://www.google.com/maps/place/sunnyvale",
   description:
     "Strategy Consultant turned Software Engineer. Looking forward to how AI will transform the world, one line of code at a time.",
   summary:
     "I started my career [solving business puzzles for big brands](/#work), but soon found myself drawn to the world of software engineering and AI. I pursued [degrees in computer engineering and economics](/#education). Now, I'm focused on [building cool tech products](/#projects), from AI-powered tools to full-stack apps, all while trying to catch a glimpse of the tech future ahead.",
-  avatarUrl: "",
+  avatarUrl: "/zebang_pixel.webp",
   skills: [
     "Python",
     "Java",
