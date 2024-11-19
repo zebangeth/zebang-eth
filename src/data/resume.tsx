@@ -77,8 +77,7 @@ export const DATA = {
       logoUrl: "/hexu.png",
       start: "09/2021",
       end: "04/2023",
-      description:
-        "Owned Profit & Loss of online channels, achieving 3x core metrics growth in 1 year",
+      description: "Owned Profit & Loss of online channels, achieving 3x core metrics growth in 1 year",
     },
     {
       company: "OC&C Strategy Consultants",
@@ -125,8 +124,7 @@ export const DATA = {
       logoUrl: "/uber_china.png",
       start: "10/2018",
       end: "01/2019",
-      description:
-        "2019 strategic planning project for DiDi ride-hailing business",
+      description: "2019 strategic planning project for DiDi ride-hailing business",
     },
     {
       company: "Boston Consulting Group",
@@ -185,24 +183,15 @@ export const DATA = {
         },
       ],
       image: "",
-      video:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/chat-collect.mp4",
+      video: "https://pub-83c5db439b40468498f97946200806f7.r2.dev/chat-collect.mp4",
     },
     {
       title: "Insight Reviews",
       href: "https://insightful.streamlit.app/",
       dates: "Jun 2023 - Aug 2023",
       active: true,
-      description:
-        "A GPT-powered e-commerce product review analysis tool.",
-      technologies: [
-        "LLM",
-        "Langchain",
-        "Python",
-        "Pandas",
-        "Streamlit",
-        "TailwindCSS",
-      ],
+      description: "A GPT-powered e-commerce product review analysis tool.",
+      technologies: ["LLM", "Langchain", "Python", "Pandas", "Streamlit", "TailwindCSS"],
       links: [
         {
           type: "Website",
@@ -225,14 +214,11 @@ export const DATA = {
       active: true,
       description:
         "A command-line tool that simplifies the process of sharing of your project's directory structure and file contents, making it ideal for collaboration with LLMs (like ChatGPT, Claude, etc.).",
-      technologies: [
-        "Python",
-        "Command Line Tool",
-      ],
+      technologies: ["Python", "Command Line Tool"],
       links: [
         {
           type: "PyPI",
-          href: "",
+          href: "https://pypi.org/project/DirPrint/",
           icon: <Icons.Python className="size-3" />,
         },
         {
@@ -246,36 +232,36 @@ export const DATA = {
     },
   ],
   hackathons: [
-  //   {
-  //     title: "Make School's Student App Competition 2017",
-  //     dates: "May 19th - 21st, 2017",
-  //     location: "International",
-  //     description: "Improved PocketDoc and submitted to online competition",
-  //     image:
-  //       "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/make-school-hackathon.png",
-  //     win: "Top 10 Finalist | Honourable Mention",
-  //     links: [
-  //       {
-  //         title: "Medium Article",
-  //         icon: <Icons.globe className="h-4 w-4" />,
-  //         href: "https://medium.com/make-school/the-winners-of-make-schools-student-app-competition-2017-a6b0e72f190a",
-  //       },
-  //       {
-  //         title: "Devpost",
-  //         icon: <Icons.globe className="h-4 w-4" />,
-  //         href: "https://devpost.com/software/pocketdoc-react-native",
-  //       },
-  //       {
-  //         title: "YouTube",
-  //         icon: <Icons.youtube className="h-4 w-4" />,
-  //         href: "https://www.youtube.com/watch?v=XwFdn5Rmx68",
-  //       },
-  //       {
-  //         title: "Source",
-  //         icon: <Icons.github className="h-4 w-4" />,
-  //         href: "https://github.com/dillionverma/pocketdoc-react-native",
-  //       },
-  //     ],
-  //   },
+    //   {
+    //     title: "Make School's Student App Competition 2017",
+    //     dates: "May 19th - 21st, 2017",
+    //     location: "International",
+    //     description: "Improved PocketDoc and submitted to online competition",
+    //     image:
+    //       "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/make-school-hackathon.png",
+    //     win: "Top 10 Finalist | Honourable Mention",
+    //     links: [
+    //       {
+    //         title: "Medium Article",
+    //         icon: <Icons.globe className="h-4 w-4" />,
+    //         href: "https://medium.com/make-school/the-winners-of-make-schools-student-app-competition-2017-a6b0e72f190a",
+    //       },
+    //       {
+    //         title: "Devpost",
+    //         icon: <Icons.globe className="h-4 w-4" />,
+    //         href: "https://devpost.com/software/pocketdoc-react-native",
+    //       },
+    //       {
+    //         title: "YouTube",
+    //         icon: <Icons.youtube className="h-4 w-4" />,
+    //         href: "https://www.youtube.com/watch?v=XwFdn5Rmx68",
+    //       },
+    //       {
+    //         title: "Source",
+    //         icon: <Icons.github className="h-4 w-4" />,
+    //         href: "https://github.com/dillionverma/pocketdoc-react-native",
+    //       },
+    //     ],
+    //   },
   ],
 } as const;
