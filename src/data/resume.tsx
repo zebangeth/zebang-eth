@@ -159,16 +159,17 @@ export const DATA = {
   ],
   projects: [
     {
-      title: "White Bear Closet",
-      href: "",
-      dates: "Oct 2024 - Present",
+      title: "AI Closet",
+      href: "https://github.com/zebangeth/ai-closet/tree/main",
+      dates: "Oct 2024 - Dec 2024",
       active: true,
       description:
-        "A mobile app that helps users organize their clothes, plan outfits, and virtually try on clothes of their own and from online stores.",
+        "A mobile app that helps users digitize their closet, get outfit inspirations, and virtually try on clothes of their own or from online stores.",
       technologies: [
-        "React Native",
         "Typescript",
-        "AWS S3",
+        "React Native",
+        "Expo",
+        "AWS",
         "Comfy UI",
         "TailwindCSS",
         "Figma",
@@ -178,19 +179,19 @@ export const DATA = {
       links: [
         {
           type: "Source",
-          href: "",
+          href: "https://github.com/zebangeth/ai-closet/tree/main",
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "",
-      video: "https://pub-83c5db439b40468498f97946200806f7.r2.dev/chat-collect.mp4",
+      image: "/ai_closet.png",
+      video: "",
     },
     {
       title: "Insight Reviews",
       href: "https://insightful.streamlit.app/",
       dates: "Jun 2023 - Aug 2023",
       active: true,
-      description: "A GPT-powered e-commerce product review analysis tool.",
+      description: "A GPT-powered e-commerce product review analysis platform for e-commerce sellers.",
       technologies: ["LLM", "Langchain", "Python", "Pandas", "Streamlit", "TailwindCSS"],
       links: [
         {
@@ -209,7 +210,7 @@ export const DATA = {
     },
     {
       title: "DirPrint",
-      href: "https://github.com/zebangeth/DirPrint",
+      href: "https://pypi.org/project/DirPrint/",
       dates: "Mar 2024",
       active: true,
       description:
