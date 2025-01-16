@@ -64,7 +64,7 @@ export const DATA = {
       title: "Software Engineer",
       logoUrl: "/aws.png",
       start: "05/2024",
-      end: "08/2024",
+      end: "Present",
       description:
         "Designed and engineered a benchmark generation system for [Amazon Q Code Transformation](https://aws.amazon.com/q/developer/code-transformation/), an LLM-powered product that automates codebase migration, enhancing the evaluation of migration success rates",
     },
