@@ -187,6 +187,29 @@ export const DATA = {
       video: "",
     },
     {
+      title: "rent-or-buy.homes",
+      href: "https://rent-or-buy.homes",
+      dates: "Jul 2025",
+      active: true,
+      description:
+        "A web app that helps you figure out whether buying or renting a home makes you richer. We're talking about differences that can reach hundreds of thousands or even millions of dollars.",
+      technologies: ["React", "Vite", "TailwindCSS", "Claude Code"],
+      links: [
+        {
+          type: "Website",
+          href: "https://rent-or-buy.homes",
+          icon: <Icons.globe className="size-3" />,
+        },
+        {
+          type: "Source",
+          href: "https://github.com/zebangeth/rent-or-buy.homes",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "/rent-or-buy.png",
+      video: "",
+    },
+    {
       title: "Insight Reviews",
       href: "https://insightful.streamlit.app/",
       dates: "Jun 2023 - Aug 2023",
