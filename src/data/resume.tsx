@@ -165,17 +165,7 @@ export const DATA = {
       active: true,
       description:
         "A mobile app that helps users digitize their closet, get outfit inspirations, and virtually try on clothes of their own or from online stores.",
-      technologies: [
-        "Typescript",
-        "React Native",
-        "Expo",
-        "AWS",
-        "Comfy UI",
-        "TailwindCSS",
-        "Figma",
-        "Shadcn UI",
-        "Magic UI",
-      ],
+      technologies: ["Typescript", "React Native", "Expo", "AWS", "Comfy UI", "Figma"],
       links: [
         {
           type: "Source",
