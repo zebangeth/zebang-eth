@@ -244,6 +244,34 @@ export const DATA = {
       image: "",
       video: "https://cdn.llm.report/openai-demo.mp4",
     },
+    {
+      title: "CampusCycle",
+      href: "https://github.com/zebangeth/CampusCycle",
+      dates: "Mar 2024",
+      active: true,
+      description:
+        "A localized e-commerce platform designed specifically for college students to buy and sell used goods and furniture. This platform addresses the needs of college students who frequently move, offering an affordable, sustainable, and community-driven solution.",
+      technologies: [
+        "Vue.js",
+        "Vite",
+        "TailwindCSS",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Docker",
+        "Kubernetes",
+        "GitLab CI/CD",
+      ],
+      links: [
+        {
+          type: "Source",
+          href: "https://github.com/zebangeth/CampusCycle",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "/campus_cycle.png",
+      video: "",
+    },
   ],
   hackathons: [
     //   {
