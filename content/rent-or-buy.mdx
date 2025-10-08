@@ -1,0 +1,132 @@
+---
+title: "4个周末，用4个AI工具：开发了一个改变我买房决策的网站（已开源）"
+publishedAt: "2025-07-15"
+summary: "A brief note of the algorithms I have learned."
+---
+
+[BBS link](https://www.1point3acres.com/bbs/thread-1137733-1-1.html)
+
+作为一个在湾区工作的码农，最近在纠结要不要买房。
+
+为了帮自己和女朋友理清思路，顺便测试下最新的 AI Coding 工具，我用几个 GenAI Tool 开发了一个买房 vs 租房对比网站。
+
+计算结果让我们取消了所有看房安排——对于我们的情况，住同等水平的房子，租房相比买房在 10 年后能多积累$200 万+的净资产。
+
+当然这只是我们的个例，每个人的输入不同，结果也不同。今天主要想分享一下项目的开发过程：花了四个周末，我测试了 Claude Code、Cursor、Gemini CLI 和 ChatGPT Codex 这 4 个 AI 工具，最终用 "Claude Code+Cursor" 的组合上线了项目。整个过程中，AI 写了 90%的代码，我主要的工作是提需求和设计。
+
+![](/rent-or-buy.png)
+
+> 网站已经上线：[https://rent-or-buy.homes](https://rent-or-buy.homes)
+>
+> 另外代码也 MIT 协议开源了，开源地址是：[https://github.com/zebangeth/rent-or-buy.homes](https://github.com/zebangeth/rent-or-buy.homes)
+>
+> 如果觉得有意思，欢迎到 GitHub 仓库 点一个 star ⭐，让更多人看到这个项目，也希望能提提任何方面的意见！
+
+### 🏠 项目介绍
+
+这个工具的核心是比较同样的现金支出下，买房 vs 租房对未来净资产的影响。帮你回答“我到底该买房还是租？”这个根本问题，提供一些财务角度的依据。
+
+对比的主要思路很简单：
+
+每年计算买房和租房的实际支出差额。当买房支出 > 租房支出时，差额自动算作租房选项的投资，反之亦然。在 N 年后，对比两种选择的净资产差异。
+
+在计算的时候，比较重要的 input 都会考虑在内，包括对于买房来说初始的 Down Payment, Closing Cost, 后面 recurring 的每年的贷款利息、房产税、HOA、房屋维护费、房贷利息个税抵扣（Claim Mortgage Interest Deduction）等等。有兴趣可以自己到网站上用不同的 input 试算。
+
+举个例子：
+
+如果十年前用 25%的首付在纽约买了一套$85 万的房子，根据纽约过去十年的整体涨幅，现在这套房子大概值$110 万，扣除未还贷款后净资产约$58 万。
+
+而如果当时选择租房同等的房子（ 2015 年月租 $2,800，后续每年涨 4%）并把买房相比租房多出来的支出全投标普 500，现在净资产会是$101 万。
+
+住相同的房子，租相比买 10 年后净资产相差 43 万。
+
+湾区的数据放出来比较容易引战，我直接把湾区的结果放在[这个链接](https://www.rent-or-buy.homes/#N4IgRgrgngkgdgBwgFwM4gFygQJwPYICmOyUACjgJYDGhmATAAwCcjbjANCACZ4DucMgEMoAW0JxkZYrUlCA5nQz0ArF1F4S8hYXjJihVMgBKQ-QEE4cCEIA2mAGwA6AOxqQGrToAqxUQE1CIRx0DABmThAACzxxcwRcQmpKM0o8OABhBRxMAA4uals8VEo4eQzitGkcWWQdACFoBi5UQltbUvLK1GranQBlNvsMd1wCYlJvIQAPUwsrG2GARiclrlLUCBwhOFpLbgBZIVL9OB3aOcJLaztMNei8IQAxQiuF24xI0WD5Ursp2ZmJT0AAs6k0yG0ij0BiMABFCNwINRkGk4JhkDgIIQuEUyr4cKIsghKHVbABxY5wVAAy4UcYkKB3dx1aZPHCvYmkuyU0rmDQQSSYFTsNhcABmlA6ZX6dWQEFCICOOCoiJAXA5knJ+D4yCil2ui0wIKc7lQQjiqAAErErgkOclUulMOK7K0AL4aiTIeBINCYUDULaa5AHdJ62xQYze-l4QXIYXsL1anV6g3vYYms0Wq7W23xRKO1HOjCu2ytFptJL6bjwABuhmQ4kkAHkEMX0RgQP0yP51SAg0ZYvXG82TIR5ThO0tInj5ASiUISWTedTaUCR0Yx8yuGMiIyKDRgSxRbv8PvJjN0zdlqsuDE4vakikO1l5DkMLlPSAlwhBshUTKUJsHwAAras0UCYJQiWM0Yj4LJUCiFsUBdN0cQHYNvQAGR2eQbEUTAQAkEB3XdIA)里了。
+
+### 🏗️ 开发心得
+
+这个项目是纯业余时间做的，技术栈主要是：React, TypeScript, Tailwind CSS, Vite.
+
+我平时工作不碰前端，这次几乎纯 AI Coding，自己写/改的代码不到 10%。
+
+整个过程花了 4 周，第一周主要在想资产计算逻辑（文档在 [reference/calculation_logic.md](https://github.com/zebangeth/rent-or-buy.homes/blob/main/reference/calculation_logic.md)），后三周实现功能。最大的收获是积累了一些 AI 工具的使用心得。
+
+1. 准备阶段：先写 PRD 和 Design Doc，避免 AI 乱来
+
+- 先花时间写 Product Requirement Document (PRD) 和 Design Doc，不用太正式，但列清 feature、架构和技术栈。
+- 这样做的好处是给 AI 明确边界，避免它“胡乱发挥”。LLM 代码生成能力超强，所以反而对我来说最高 ROI 的事情是仔细定义需求，而不是反复修代码。
+
+2. 有 UI 的项目先让 LLM 用 HTML 做一个产品原型 UI Mockup，定好 UI 布局和设计风格。（我用到的通过 LLM 制作 UI Mockup 的提示词也放在了[项目 GitHub](https://github.com/zebangeth/rent-or-buy.homes/blob/main/reference/UIMockUpPrompt.md) 上，提示词灵感来自 YouTube 博主 [AI Jason](https://www.youtube.com/@AIJasonZ)）这样有 3 个好处：
+
+- 通过 HTML 改动明确 UI 设计，比后期用 React 组件调整快很多，节省时间。
+- 可以避免 LLM 在实现组件的时候自由发挥，生成出千篇一律 AI 味很浓的设计。
+- 对于后期给 AI 参考来说，HTML 比纯文字描述更准确。
+
+总之，AI Coding 有点像你来扮演 PM + SDM 负责明确需求和 High Level Design, LLM 则是没什么主见的 SWE/SDE 负责功能实现。
+
+就像在工作中一样，如果 PM/SDM 一开始没想清楚就胡乱上马项目，做到一半又要大规模重构，最后改来改去质量和效率都不会很理想。
+
+所以前期多花时间想清楚远比后期反复修改划算，无论从实现时间还是最终质量来看都要好得多。
+
+---
+
+### 🔧 AI Coding 工具对比
+
+开发期间用到的 4 个 AI Coding 工具个人体感是：
+
+Claude Code: 85 分 > Cursor Pro: 80 分 > Gemini CLI: 75 分 >> Codex: 50 分
+
+#### 🥇 Claude Code
+
+- 得益于强大的模型能力，生成的代码一次性成功率很高
+- 相比 Cursor, Windsurf 能主动读更多的相关代码文件，生成的代码一致性更好
+- tool use 的能力强，Cursor 有单次 agent 调用最多 25 次 tool use 的限制，Claude Code 自主性更高，可以在单次任务里多次调用工具执行修改/跑测试/查文档/再修改…最终交付可以成功运行的结果
+- 缺点：
+  - 欠缺一些基础功能，比如没有 tab 补全，没有 checkpoint
+  - 由于是 CLI 很多常用操作都不是很直观，比如在对话的时候怎么换行、粘贴图片都需要一定时间适应
+
+#### 🥈 Cursor Pro
+
+- 排名第一的 AI IDE，也用过 Windsurf 和 Trae, 但还是和 Cursor 有一些差距
+- 近期改了计费方式之后明显感觉 agent 模式读代码的主动性更强了，在还没有读全上下文就开始乱写代码的情况变少了
+- Tab 自动补全属于用了就离不开的功能，比 Copilot, Windsurf 之流的 tab 补全强很多
+- 功能很完善，该有的功能都有：MCP server, checkpoint, 接入 custom model
+
+#### 🥉 Gemini CLI
+
+- 和 Claude Code 产品形态很像，都是 CLI. 刚出的时候和 Claude Code 相比差距还比较大，但可能因为是开源，community contribute 的速度很快，现在感觉已经越来越接近 Claude Code 了
+- 最大的优势是免费，而且免费的额度比较慷慨，基本可以用免费额度完成非重度开发
+- 和 Claude Code 相比，感觉主要差距还是来自底层模型，Claude 明显一次性成功率更高，写 front-end 的时候整体 Design 的水平更在线。另外还发现 Gemini 2.5 Pro 有时有一点 over complicate 问题的倾向，出现即使是比较简单的改动，Gemini 改出来一大堆 diff 的情况
+
+#### 💩 ChatGPT Codex (用的是 Codex Web 版，不是 Codex CLI)
+
+- 产品形态是一个独立的网站，用 ChatGPT 账号登录就可以，登录之后要连接到自己的 GitHub，指定项目所在的代码仓库
+- 描述需求发给 Codex 之后，Codex 最终会以提交 GitHub PR 的方式完成需求里要求的修改
+- 体验是执行的又慢质量又差，而且云端的方式相比本地，修改和调试 Codex 的代码都相对更麻烦
+- 实在是想不到什么场景会用到 Codex, 感觉甚至不如直接用 ChatGPT 这种 ChatBot 形态帮我 coding 的效果好
+
+我最后摸索出来发现其实这几个工具其实不是互相替代的关系，组合使用效果更好
+
+Claude Code 负责相对 scope 大一些的 feature development 和跨文件的 refactoring
+
+Cursor 作为日常 IDE，在手动修改代码的时候用它的 tab 补全功能，另外一些 scope 比较小，只需要一两个文件作为上下文的需求，用 Cursor 也更方便
+
+Gemini CLI 因为免费，而且 Gemini 2.5 Pro 1 million 上下文的优势，非常适合在拿到一个大的代码库的时候让 Gemini CLI 去帮忙 walk-through
+
+---
+
+最后，网站的核心功能刚开发完，还有很多不完善的地方，欢迎试用并反馈意见。
+
+代码已经在 GitHub 上 MIT 协议开源，仓库里包括用到的 Prompt, Claude Code 的 Claude.md 文件，项目最开始写的 PRD, Design Doc, 和 HTML UI Mockup 文件。如果觉得有意思，也希望能给这个项目点点 star ⭐
+非常感谢！
+
+---
+
+update:
+
+做这个工具的目的绝不是为了劝退买房。只不过基于我们自己对未来的假设，刚好得出了暂时不打算买房的结论。
+
+实际上房价涨幅、投资回报率的假设稍有不同，都可能让结论完全反转。
+
+买房决策当然也不止 net worth 计算。稳定性/灵活性、归属感、家庭考虑都可能是同样重要的因素。
+
+这个工具只是希望帮助把能量化的部分量化，为决策提供一个财务角度的参考框架。
