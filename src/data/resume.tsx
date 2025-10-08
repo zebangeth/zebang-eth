@@ -211,15 +211,25 @@ export const DATA = {
     },
     {
       title: "Insight Reviews",
-      href: "https://insightful.streamlit.app/",
+      href: "https://insight-reviews-beta.vercel.app/",
       dates: "Jun 2023 - Aug 2023",
       active: true,
       description: "A GPT-powered e-commerce product review analysis platform for e-commerce sellers.",
-      technologies: ["LLM", "Langchain", "Python", "Pandas", "Streamlit", "TailwindCSS"],
+      technologies: [
+        "Next.js",
+        "LLM",
+        "Langchain",
+        "Python",
+        "Pandas",
+        "Streamlit",
+        "Typescript",
+        "Shadcn",
+        "TailwindCSS",
+      ],
       links: [
         {
           type: "Website",
-          href: "https://insightful.streamlit.app/",
+          href: "https://insight-reviews-beta.vercel.app/",
           icon: <Icons.globe className="size-3" />,
         },
         {
