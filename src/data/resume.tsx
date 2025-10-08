@@ -172,6 +172,11 @@ export const DATA = {
           href: "https://github.com/zebangeth/ai-closet/tree/main",
           icon: <Icons.github className="size-3" />,
         },
+        {
+          type: "Blog",
+          href: "/blog/ai-closet",
+          icon: <Icons.notion className="size-3" />,
+        },
       ],
       image: "/ai_closet.png",
       video: "",
@@ -194,6 +199,11 @@ export const DATA = {
           type: "Source",
           href: "https://github.com/zebangeth/rent-or-buy.homes",
           icon: <Icons.github className="size-3" />,
+        },
+        {
+          type: "Blog",
+          href: "/blog/rent-or-buy",
+          icon: <Icons.notion className="size-3" />,
         },
       ],
       image: "/rent-or-buy.png",
