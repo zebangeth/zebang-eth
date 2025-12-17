@@ -57,6 +57,17 @@ export const DATA = {
 
   work: [
     {
+      company: "xAI",
+      href: "https://x.ai/",
+      badges: [],
+      location: "Palo Alto, CA",
+      title: "Member of Technical Staff",
+      logoUrl: "/xai.png",
+      start: "11/2024",
+      end: "12/2025",
+      description: "Building evals for software engineering tasks and a [RAG-based collections search API](https://docs.x.ai/docs/key-information/collections).",
+    },
+    {
       company: "Amazon",
       href: "https://aws.amazon.com",
       badges: [],
@@ -64,7 +75,7 @@ export const DATA = {
       title: "Software Engineer",
       logoUrl: "/aws.png",
       start: "05/2024",
-      end: "Present",
+      end: "11/2025",
       description:
         "Designed and engineered a benchmark generation system for [Amazon Q Code Transformation](https://aws.amazon.com/q/developer/code-transformation/), an LLM-powered product that automates codebase migration, enhancing the evaluation of migration success rates",
     },
